@@ -1,5 +1,5 @@
 // import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
 // function App() {
 //   return (
@@ -26,21 +26,27 @@ import './App.css';
 // const { Route, Routes, Link } = require("react-router-dom");
 // // const Login = require("./Login.jsx");
 // const React = require("react");
-import Header from"./Header";
+import Header from "./Header";
 import Dashboard from "./Dashboard.jsx";
+import { useEffect } from "react";
 // const New =require('./views/teacher_comp/New.jsx')
 
-function App () {
-  
-    return (
-    
-          <div className="App">
-            <Header />
-            <Dashboard />
-          </div>
-     
-    );
-  
+function App() {
+  function getList() {
+    return fetch("http://localhost:3000/students").then((data) =>
+     data.json()
+    ).then(res => console.log(res));
+  }
+  useEffect(() => {
+    getList();
+  }, []);
+
+  return (
+    <div className="App">
+      <Header />
+      <Dashboard />
+    </div>
+  );
 }
 
 export default App;
