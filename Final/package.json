@@ -1,0 +1,30 @@
+{
+    "name": "final",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "nodemon index"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^1.20.2",
+        "config": "^3.3.9",
+        "cutestrap": "^2.0.0-4",
+        "dotenv": "^16.0.3",
+        "express": "^4.18.2",
+        "express-react-views": "^0.11.0",
+        "init": "^0.1.2",
+        "method-override": "^3.0.0",
+        "mime": "^3.0.0",
+        "mongoose": "^6.10.5",
+        "nodemon": "^2.0.22",
+        "react": "^16.14.0",
+        "react-calendar": "^4.2.1",
+        "react-dom": "^16.14.0",
+        "react-router-dom": "^6.10.0"
+    }
+}
