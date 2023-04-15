@@ -189,6 +189,6 @@ app.get('/views/student_comp/dashboard', (req, res) => {
 //     });
 // });
 
-app.listen(3000, () => {
+app.listen(3001, () => {
   console.log("listening");
 });
