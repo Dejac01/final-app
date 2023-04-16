@@ -28,14 +28,16 @@ import "./App.css";
 // const React = require("react");
 import Header from "./Header";
 import Dashboard from "./Dashboard.jsx";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 // const New =require('./views/teacher_comp/New.jsx')
 
 function App() {
+
+  const [students, setStudents] = useState([])
   function getList() {
     return fetch("http://localhost:3000/students").then((data) =>
      data.json()
-    ).then(res => console.log(res));
+    ).then(res => setStudents(res));
   }
   useEffect(() => {
     getList();
@@ -45,6 +47,13 @@ function App() {
     <div className="App">
       <Header />
       <Dashboard />
+      <ul>
+        {
+          students.map((student => {
+            return (<li>{student._id}</li>)
+          }))
+        }
+      </ul>
     </div>
   );
 }

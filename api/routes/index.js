@@ -78,6 +78,7 @@ router.get('/students', (req, res)=>{
   });
 });
 
+// get students by ID
 router.get('/students/:studentId', function(req, res){
   Students.find({"id":req.params.studentId}, (err, student) => {
     if (err) {
@@ -88,6 +89,18 @@ router.get('/students/:studentId', function(req, res){
     }
   });
 });
+
+router.get('/auth', function(req,res){
+  Students.find({"id":req.params.studentId, "pw": req.params.studentPW },
+  (err, student) => {
+    if (err) {
+      console.error(err);
+    } else {
+      console.log("students", student);
+      res.send (student)
+    }
+})
+})
 
 router.get('/teachers', (req, res)=>{
   Teachers.find({}, (err, allTeachers) => {
