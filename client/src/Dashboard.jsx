@@ -7,8 +7,8 @@ import LessonsUI from "./LessonsUI.jsx";
 function Dashboard (props){
   console.log(props)
  return (
-    <div>I AM DASHBOARD
-    <New/>
+    <div> 
+      <h1>WELCOME TO YOUR DASHBOARD</h1>
     <Calender/>
     <LessonsUI/>
     </div>

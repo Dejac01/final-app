@@ -16,10 +16,13 @@ function LessonsUI(props) {
       <h1>Homework Assignments</h1>
       <ul>
         {lessons.map((item, index) => (
-          <li key={index}>
-           <span> {item.name} </span>
+          <li key={index}> 
+          <a href={item.link}> 
+          <span> {item.name} </span>
            <span> {item.dueDate} </span>
            <span> {item.submitted} </span>
+          </a>
+           
 
           </li>
         ))}

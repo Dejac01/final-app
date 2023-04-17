@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const lessonsSchema = new mongoose.Schema({
     name:  { type: String, required: true },
     dueDate:  { type: String, required: true },
-    submitted: Boolean
+    link:  { type: String, required: true }
    
 });
 
