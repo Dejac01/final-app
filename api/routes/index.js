@@ -33,38 +33,7 @@ router.get('/lessons/_id', function (req,res){
 });
 
 
-router.get('/messages', (req, res)=>{
-  Messages.find({}, (err, allMessages) => {
-    if (err) {
-      console.error(err);
-    } else {
-      console.log("allMessages", allMessages); 
-      res.send (allMessages)
-    }
-  });
-});
 
-router.get('/messages/sender/:sender', function (req,res){
-  Messages.find({sender:req.params.sender}, (err, senderMessages) => {
-    if (err) {
-      console.error(err);
-    } else {
-      console.log("senderMessages", senderMessages); 
-      res.send (senderMessages)
-    }
-  })
-});
-
-router.get('/messages/reciever/:reciever', function (req,res){
-  Messages.find({reciever:req.params.reciever}, (err, recieverMessages) => {
-    if (err) {
-      console.error(err);
-    } else {
-      console.log("recieverMessages", recieverMessages); 
-      res.send (recieverMessages)
-    }
-  })
-});
 
 
 router.get('/students', (req, res)=>{
@@ -80,7 +49,8 @@ router.get('/students', (req, res)=>{
 
 // get students by ID
 router.get('/students/:studentId', function(req, res){
-  Students.find({"id":req.params.studentId}, (err, student) => {
+  console.log(req.params);
+  Students.find({"_id":req.params.studentId}, (err, student) => {
     if (err) {
       console.error(err);
     } else {
@@ -90,16 +60,32 @@ router.get('/students/:studentId', function(req, res){
   });
 });
 
-router.get('/auth', function(req,res){
-  Students.find({"id":req.params.studentId, "pw": req.params.studentPW },
-  (err, student) => {
-    if (err) {
-      console.error(err);
-    } else {
-      console.log("students", student);
-      res.send (student)
-    }
-})
+//Log In Function
+router.get('/auth/', function(req,res){
+  console.log(req.query)
+  // checking for teacher query with contact info and password
+  if (req.query.teacher&&req.query.contactInfo&&req.query.pw) {
+    Teachers.find({"contactInfo":req.query.contactInfo, "pw":req.query.pw},
+    (err, teacher) => {
+      if (err) {
+        console.error(err);
+      } else {
+        console.log("teachers", teacher);
+        res.send (teacher)
+      }
+  })
+  }
+  else if (req.query.contactInfo&&req.query.pw) {
+    Students.find({"contactInfo":req.query.contactInfo, "pw":req.query.pw},
+    (err, student) => {
+      if (err) {
+        console.error(err);
+      } else {
+        console.log("students", student);
+        res.send (student)
+      }
+  })
+  }
 })
 
 router.get('/teachers', (req, res)=>{
@@ -113,8 +99,8 @@ router.get('/teachers', (req, res)=>{
   });
 });
 
-router.get('/teachers/_id', function (req,res){
-  Teachers.find({id:req.params.id}, (err, allTeachers) => {
+router.get('/teachers/:_id', function (req,res){
+  Teachers.find({_id:req.params._id}, (err, allTeachers) => {
     if (err) {
       console.error(err);
     } else {
