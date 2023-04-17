@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 const Lessons = require("../models/lessons");
 const Students = require("../models/students");
-const Messages = require("../models/messages");
 const Teachers = require("../models/teachers");
 
 /* GET home page. */
