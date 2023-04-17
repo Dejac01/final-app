@@ -8,7 +8,7 @@ function Login() {
   const handleLogin = () => {
     // login logic
     // API call to authenticate user
-    console.log('Email:', email);
+    console.log('User:', user);
     console.log('Password:', password);
   };
 
@@ -16,12 +16,12 @@ function Login() {
     <div>
       <h1>Login Page</h1>
       <form>
-        <label htmlFor="email">Email</label>
+        <label htmlFor="contactInfo">User</label>
         <input
-          type="email"
-          id="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          type="text"
+          id="text"
+          value={text}
+          onChange={(e) => setText(e.target.value)}
         />
         <label htmlFor="password">Password</label>
         <input
