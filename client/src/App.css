@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  align-items: center;
 }
 
 .App-logo {
@@ -50,7 +51,7 @@
   justify-content: center;
  }
  .react-calendar__navigation button {
-  color: #6f48eb;
+  color: #020007;
   min-width: 44px;
   background: none;
   font-size: 16px;
@@ -126,7 +127,15 @@
   color: white;
  }
 
-
+ .calendar-container{
+  margin-left: 580px;
+ }
+.hw{
+  margin-right: 1050px;
+}
+ .table, .th, .td {
+  border: 1px solid;
+}
  .header {
   display: flex;
   justify-content: center;

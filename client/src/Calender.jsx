@@ -8,7 +8,7 @@ function Calender (props) {
 
   return (
     <div className='app'>
-      <h1 className='text-center'>Check your Calendar</h1>
+      <h3 className='text-center'>Check your Calendar!</h3>
       <div className='calendar-container'>
         <Calendar onChange={setDate} value={date}  />
       </div>

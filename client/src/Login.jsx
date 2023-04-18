@@ -2,7 +2,7 @@ import React from 'react'
 import { useEffect, useState } from "react";
 
 function Login() {
-  const [email, setEmail] = useState('');
+  const [user, setUser] = useState('');
   const [password, setPassword] = useState('');
 
   const handleLogin = () => {
@@ -16,12 +16,13 @@ function Login() {
     <div>
       <h1>Login Page</h1>
       <form>
-        <label htmlFor="contactInfo">User</label>
+        <ul>
+        <label htmlFor="contactInfo">User:</label>
         <input
-          type="text"
-          id="text"
-          value={text}
-          onChange={(e) => setText(e.target.value)}
+          type="user"
+          id="user"
+          value={user}
+          onChange={(e) => setUser(e.target.value)}
         />
         <label htmlFor="password">Password</label>
         <input
@@ -30,6 +31,7 @@ function Login() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
+        </ul>
         <button type="button" onClick={handleLogin}>
           Login
         </button>
