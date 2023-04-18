@@ -12,8 +12,10 @@ Check out the full site here:
 
 Login as student: 
 
+
 user:   Password:
 
 Login as Insructor: 
+
 
 user: password: 
