@@ -3,6 +3,7 @@ var router = express.Router();
 const Lessons = require("../models/lessons");
 const Students = require("../models/students");
 const Teachers = require("../models/teachers");
+const Quotes = require ("../Quotes");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -32,7 +33,16 @@ router.get('/lessons/_id', function (req,res){
 });
 
 
-
+router.get('/quote', function (req,res){
+  Quotes.find({id:req.params.id}, (err, allQuotes) => {
+    if (err) {
+      console.error(err);
+    } else {
+      console.log("allQuotes", allQuotes); 
+      res.send (allQuotes)
+    }
+  })
+});
 
 
 router.get('/students', (req, res)=>{
