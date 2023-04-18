@@ -3,7 +3,8 @@ var router = express.Router();
 const Lessons = require("../models/lessons");
 const Students = require("../models/students");
 const Teachers = require("../models/teachers");
-const Quotes = require ("../Quotes");
+
+// const Quotes = require ("../Quotes");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -33,18 +34,25 @@ router.get('/lessons/_id', function (req,res){
 });
 
 
-router.get('/quote', function (req,res){
-  Quotes.find({id:req.params.id}, (err, allQuotes) => {
-    if (err) {
-      console.error(err);
-    } else {
-      console.log("allQuotes", allQuotes); 
-      res.send (allQuotes)
+router.get('/quote', function (req,res)
+{
+  const options = {
+    method: 'GET',
+    headers: {
+      'X-RapidAPI-Key': '440d7f76bbmsh4facf782795d9d5p1b51a0jsn6de6932883eb',
+      'X-RapidAPI-Host': 'quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com'
     }
-  })
-});
+  };
 
-
+    const url = ('https://quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com/quote?token=ipworld.info')
+   
+  fetch(url , options)
+  .then(response => res.send(response.json()))
+  // .then((data) => { 
+  // (res.send(data))})
+  // .catch(err => console.error(err));
+})
+ 
 router.get('/students', (req, res)=>{
   Students.find({}, (err, allStudents) => {
     if (err) {

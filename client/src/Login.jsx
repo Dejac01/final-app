@@ -1,43 +1,17 @@
-import React from 'react'
+import React from "react";
 import { useEffect, useState } from "react";
 
-function Login() {
-  const [user, setUser] = useState('');
-  const [password, setPassword] = useState('');
-
+function Login(props) {
   const handleLogin = () => {
     // login logic
     // API call to authenticate user
-    console.log('User:', user);
-    console.log('Password:', password);
+console.log("User:", props.user);
+  console.log("Password:", props.password);
+    // getLogin();
   };
 
   return (
-    <div>
-      <h1>Login Page</h1>
-      <form>
-        <ul>
-        <label htmlFor="contactInfo">User:</label>
-        <input
-          type="user"
-          id="user"
-          value={user}
-          onChange={(e) => setUser(e.target.value)}
-        />
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          id="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        </ul>
-        <button type="button" onClick={handleLogin}>
-          Login
-        </button>
-      </form>
-    </div>
-  );
-}
+ <h1>hello</h1> 
+  )}
 
 export default Login;

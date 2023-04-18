@@ -162,3 +162,8 @@
   color: white;
   text-decoration: none;
 }
+
+.thirty-percent{
+  width: 30%;
+  display: inline;
+}
