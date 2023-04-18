@@ -9,8 +9,11 @@ While students may view upcoming assignments, credentials attatched to an instru
 
 
 Check out the full site here:
+
 Login as student: 
+
 user:   Password:
 
 Login as Insructor: 
+
 user: password: 
