@@ -14,21 +14,18 @@ function LessonsUI(props) {
   return (
     <div>
       <h1 className="hw">Assignments due</h1>
-      <table>
+
       <ul>
         {lessons.map((item, index) => (
-          <li key={index}> 
-          <a href={item.link}> 
-          <li> {item.name} </li>
-           <span> {item.dueDate} </span>
-           <span> {item.submitted} </span>
-          </a>
-           
-
+          <li key={item._id}>
+            <a href={item.link}>
+              <span> {item.name} &nbsp;</span>
+              <br></br>
+              <span> {item.dueDate} </span>
+            </a>
           </li>
         ))}
       </ul>
-      </table>
     </div>
   );
 }

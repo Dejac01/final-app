@@ -4,19 +4,25 @@ import Calender from "./Calender.jsx";
 import LessonsUI from "./LessonsUI.jsx";
 import Quotes from "./Quotes.jsx";
 import Progress from "./Progress.jsx";
-import Login from "./Login.jsx";
 import { useEffect, useState } from "react";
 
 function Dashboard(props) {
-  const [validate, setValidate] = useState({name:"test"});
+  const [validate, setValidate] = useState(null);
+  // set useState back to null
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
+  const [teacher, setTeacher] = useState(false);
+
+  function getTeacher() {
+    return teacher ? 1 : 0;
+  }
+
   function getLogin() {
     return fetch(
-      `http://localhost:3000/auth/?contactInfo=${user}&pw=${password}`
+      `http://localhost:3000/auth/?teacher=${getTeacher()}&contactInfo=${user}&pw=${password}`
     )
       .then((data) => data.json())
-      .then((res) => setValidate(...validate, ...res[0]));
+      .then((res) => setValidate(res[0]));
   }
 
   function handleSubmit() {
@@ -24,47 +30,45 @@ function Dashboard(props) {
   }
 
   const showStyle = {
-    display:"block"
-  }
+    display: "block",
+  };
 
   const hideStyle = {
-    display:"none"
-  }
-
+    display: "none",
+  };
 
   function Active(isValid) {
-    if ( isValid && isValid.isValid && isValid.isValid.name) {
-      return <div>
-        <h1>WELCOME TO YOUR DASHBOARD</h1>
-         <div>
-          <div></div>
-          <div></div>
-         </div>
-        <Calender />
-        <div className="thirty-percent">
-          <LessonsUI />
+    if (isValid && isValid.isValid && isValid.isValid.name) {
+      return (
+        <div>
+          <h1>WELCOME TO YOUR DASHBOARD</h1>
+          <Calender />
+          <div className="wrap">
+            <div className="thirty-percent">
+              <LessonsUI />
+            </div>
+            <div className="thirty-percent">
+              <Progress />
+            </div>
+            <div className="thirty-percent">
+              <Quotes />
+            </div>
+          </div>
         </div>
-        
-        <div className="thirty-percent">
-        <Progress/>
-        </div>
-        <div className="thirty-percent">
-        <Quotes/> </div>
-       
-      </div>;
+      );
     }
-    return null
+    return null;
   }
 
   console.log(props);
   return (
     <div>
       {/* use css to show and hide log in div using validate property */}
-        <div style={!validate? showStyle : hideStyle}>
+      <div style={!validate ? showStyle : hideStyle}>
         <h1>Login Page</h1>
         <form>
           <ul>
-            <label htmlFor="contactInfo">Name:</label>
+            <label htmlFor="contactInfo">Contact:</label>
             <input
               type="name"
               id="name"
@@ -82,6 +86,14 @@ function Dashboard(props) {
           <button type="button" onClick={handleSubmit}>
             Login
           </button>
+          <br></br>
+          <label htmlFor="teacher">Teacher</label>
+          <input
+            type="checkbox"
+            id="teacher"
+            value={teacher}
+            onChange={(e) => setTeacher(!teacher)}
+          />
         </form>
       </div>
       <Active isValid={validate} />

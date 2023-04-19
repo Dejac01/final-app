@@ -38,8 +38,7 @@
   }
 }
 
-
-.react-calendar { 
+.react-calendar {
   width: 400px;
   max-width: 100%;
   background-color: #1c9cd7;
@@ -49,113 +48,113 @@
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.125em;
   justify-content: center;
- }
- .react-calendar__navigation button {
+}
+.react-calendar__navigation button {
   color: #020007;
   min-width: 44px;
   background: none;
   font-size: 16px;
   margin-top: 8px;
- }
- .react-calendar__navigation button:enabled:hover,
- .react-calendar__navigation button:enabled:focus {
+}
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
   background-color: #1c9cd7;
- }
- .react-calendar__navigation button[disabled] {
+}
+.react-calendar__navigation button[disabled] {
   background-color: #1c9cd7;
- }
- abbr[title] {
+}
+abbr[title] {
   text-decoration: none;
- }
+}
 
- .react-calendar__tile:enabled:hover,
- .react-calendar__tile:enabled:focus {
+.react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:focus {
   background: #1c9cd7;
   color: #6f48eb;
   border-radius: 6px;
- }
- .react-calendar__tile--now {
+}
+.react-calendar__tile--now {
   background: #6f48eb33;
   border-radius: 6px;
   font-weight: bold;
   color: #6f48eb;
- }
- .react-calendar__tile--now:enabled:hover,
- .react-calendar__tile--now:enabled:focus {
+}
+.react-calendar__tile--now:enabled:hover,
+.react-calendar__tile--now:enabled:focus {
   background: #6f48eb33;
   border-radius: 6px;
   font-weight: bold;
   color: #6f48eb;
- }
- .react-calendar__tile--hasActive:enabled:hover,
- .react-calendar__tile--hasActive:enabled:focus {
+}
+.react-calendar__tile--hasActive:enabled:hover,
+.react-calendar__tile--hasActive:enabled:focus {
   background: #f8f8fa;
- }
- .react-calendar__tile--active {
+}
+.react-calendar__tile--active {
   background: #6f48eb;
   border-radius: 6px;
   font-weight: bold;
   color: white;
- }
- .react-calendar__tile--active:enabled:hover,
- .react-calendar__tile--active:enabled:focus {
+}
+.react-calendar__tile--active:enabled:hover,
+.react-calendar__tile--active:enabled:focus {
   background: #6f48eb;
   color: white;
- }
- .react-calendar--selectRange .react-calendar__tile--hover {
+}
+.react-calendar--selectRange .react-calendar__tile--hover {
   background-color: #f8f8fa;
- }
- .react-calendar__tile--range {
+}
+.react-calendar__tile--range {
   background: #1c9cd7;
   color: #6f48eb;
   border-radius: 0;
- }
- .react-calendar__tile--rangeStart {
+}
+.react-calendar__tile--rangeStart {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   border-top-left-radius: 6px;
   border-bottom-left-radius: 6px;
   background: #6f48eb;
   color: white;
- }
- .react-calendar__tile--rangeEnd {
+}
+.react-calendar__tile--rangeEnd {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
   background: #6f48eb;
   color: white;
- }
+}
 
- .calendar-container{
+.calendar-container {
   margin-left: 580px;
- }
-.hw{
+}
+.hw {
   margin-right: 1050px;
 }
-.progress-bar{
+.progress-bar {
   justify-content: center;
   margin-left: 500px;
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  background: 
-    radial-gradient(closest-side, white 79%, transparent 80% 100%),
-    conic-gradient(rgb(110, 20, 247) 75%, rgb(167, 71, 235) 0);  
+  background: radial-gradient(closest-side, white 79%, transparent 80% 100%),
+    conic-gradient(rgb(110, 20, 247) 75%, rgb(167, 71, 235) 0);
 }
 
-
- .table, .th, .td {
+.table,
+.th,
+.td {
   border: 1px solid;
 }
- .header {
+.header {
   display: flex;
   justify-content: center;
   background-color: rgb(14, 144, 184);
   color: white;
   padding: 7px;
   font-size: 2em;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 .header a {
@@ -163,7 +162,20 @@
   text-decoration: none;
 }
 
-.thirty-percent{
-  width: 30%;
-  display: inline;
+.thirty-percent {
+  float: left;
+  width: 33%;
+}
+
+.wrap {
+  width: 100%;
+}
+.wrap:after {
+  /* Prevent wrapper from shrinking height, 
+  see http://www.positioniseverything.net/easyclearing.html */
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
 }
