@@ -10,7 +10,7 @@ function QuoteApi({}) {
         "uotes-inspirational-quotes-motivational-quotes.p.rapidapi.com",
     },
   };
-
+  // create parameters of useState
   const [quote, setQuote] = useState({ text: "", author: "" });
 
   useEffect(() => {
