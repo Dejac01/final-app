@@ -1,10 +1,9 @@
 import React from "react";
-import New from "./teacher_comp/New.jsx";
 import Calender from "./Calender.jsx";
 import LessonsUI from "./LessonsUI.jsx";
 import Quotes from "./Quotes.jsx";
 import Progress from "./Progress.jsx";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 function Dashboard(props) {
   const [validate, setValidate] = useState(null);
@@ -45,7 +44,7 @@ function Dashboard(props) {
           <Calender />
           <div className="wrap">
             <div className="thirty-percent">
-              <LessonsUI />
+              <LessonsUI teacher={teacher} />
             </div>
             <div className="thirty-percent">
               <Progress />

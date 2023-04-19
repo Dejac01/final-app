@@ -21,6 +21,18 @@ router.get("/lessons", (req, res) => {
     }
   });
 });
+//post
+router.post("/lessons", async (req, res) => {
+  console.log(req.body);
+  const lesson = new Lessons({
+    name: req.body.name,
+    dueDate: req.body.dueDate,
+    link: req.body.link,
+  });
+  console.log(lesson);
+  await lesson.save();
+  res.send(lesson);
+});
 
 router.get("/lessons/_id", function (req, res) {
   Lessons.find({ id: req.params.id }, (err, allLessons) => {

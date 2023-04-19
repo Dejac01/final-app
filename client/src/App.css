@@ -170,6 +170,7 @@ abbr[title] {
 .wrap {
   width: 100%;
 }
+
 .wrap:after {
   /* Prevent wrapper from shrinking height, 
   see http://www.positioniseverything.net/easyclearing.html */
@@ -178,4 +179,17 @@ abbr[title] {
   height: 0;
   clear: both;
   visibility: hidden;
+}
+
+.button {
+  display: block;
+  width: 115px;
+  height: 25px;
+  background: #4e9caf;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  line-height: 25px;
 }

@@ -14,7 +14,6 @@ function LessonsUI(props) {
   return (
     <div>
       <h1 className="hw">Assignments due</h1>
-
       <ul>
         {lessons.map((item, index) => (
           <li key={item._id}>
@@ -26,6 +25,11 @@ function LessonsUI(props) {
           </li>
         ))}
       </ul>
+      {props.teacher ? (
+        <a className="button" href="/new">
+          Create New Assignment
+        </a>
+      ) : null}
     </div>
   );
 }

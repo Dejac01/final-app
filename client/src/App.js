@@ -3,9 +3,7 @@ import "./App.css";
 import New from "./teacher_comp/New.jsx";
 import Header from "./Header";
 import Dashboard from "./Dashboard.jsx";
-import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
-import { BrowserRouter as Router } from "react-router-dom";
 
 // const New =require('./views/teacher_comp/New.jsx')
 
