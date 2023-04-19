@@ -30,8 +30,8 @@ function QuoteApi({}) {
   }, []);
 
   return (
-    <div>
-      Quote of the day
+    <div className="quote">
+      <h1> Quote of the day</h1>
       <p> {quote.text}</p>
       <p> {quote.author}</p>
     </div>

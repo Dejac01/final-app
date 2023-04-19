@@ -37,6 +37,7 @@ function Dashboard(props) {
   };
 
   function Active(isValid) {
+    // if username and pw are valid the connection is active
     if (isValid && isValid.isValid && isValid.isValid.name) {
       return (
         <div>

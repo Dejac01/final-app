@@ -13,14 +13,14 @@ function LessonsUI(props) {
   }, []);
   return (
     <div>
-      <h1 className="hw">Assignments due</h1>
+      <h1 className="hw">Assignments </h1>
       <ul>
         {lessons.map((item, index) => (
           <li key={item._id}>
             <a href={item.link}>
-              <span> {item.name} &nbsp;</span>
+              <span className="assn"> {item.name} &nbsp;</span>
               <br></br>
-              <span> {item.dueDate} </span>
+              <span className="assn"> {item.dueDate} </span>
             </a>
           </li>
         ))}
