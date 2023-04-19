@@ -12,10 +12,10 @@ Check out the full site here:
 
 Login as student: 
 
-
-user:   Password:
+user:Sincere@april.biz   
+Password:project
 
 Login as Insructor: 
 
-
-user: password: 
+user:email2  
+password: project
