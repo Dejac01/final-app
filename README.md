@@ -9,7 +9,8 @@ While students may view upcoming assignments, credentials attatched to an instru
 
 
 Check out the full site here:
-Use the login credentials below to check out the site as student and.or as a teacher. (The email is from a json placement holder and does not exist)
+
+Use the login credentials below to check out the site as student and/or as a teacher. (The email is from a json placement holder and does not exist)
 Login as student: 
 
 user: Sincere@april.biz   
