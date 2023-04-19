@@ -57,11 +57,13 @@ router.get("/quote", function (req, res) {
 
   const url =
     "https://quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com/quote?token=ipworld.info";
-  res.send({ text: "drop it lik its hot", author: "lil wayne" });
-  // fetch(url, options).then((response) => res.send(response.json()));
-  // .then((data) => {
-  // (res.send(data))})
-  // .catch(err => console.error(err));
+  // res.send({ text: "drop it lik its hot", author: "lil wayne" });
+  fetch(url, options)
+    .then((response) => response.json())
+    .then((data) => {
+      res.send(data);
+    })
+    .catch((err) => console.error(err));
 });
 
 router.get("/students", (req, res) => {

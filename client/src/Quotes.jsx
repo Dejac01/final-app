@@ -11,7 +11,7 @@ function QuoteApi({}) {
     },
   };
 
-  const [quote, setQuote] = useState();
+  const [quote, setQuote] = useState({ text: "", author: "" });
 
   useEffect(() => {
     //Function to Fetch Data
@@ -21,7 +21,7 @@ function QuoteApi({}) {
         .then((response) => response.json())
         .then((data) => {
           console.log(data);
-          setQuote(data);
+          setQuote({ ...quote, ...data });
         })
         .catch((err) => console.error(err));
     };
@@ -32,8 +32,8 @@ function QuoteApi({}) {
   return (
     <div>
       Quote of the day
-      {/* <p> {quote.text}</p> */}
-      {/* <p> {quote.author}</p> */}
+      <p> {quote.text}</p>
+      <p> {quote.author}</p>
     </div>
   );
 }
